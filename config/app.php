@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Aadhar\Greeting\GreetingServiceProvider::class,
         Aadhar\Math\MathServiceProvider::class,
+        Aadhar\LaravelImagick\ImagickServiceProvider::class,
     ],
 
     /*

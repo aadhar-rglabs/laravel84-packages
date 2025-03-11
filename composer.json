@@ -47,7 +47,8 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Aadhar\\Math\\": "packages/aadha/laravel_math/src/",
-            "Aadhar\\Greeting\\": "packages/aadha/laravel_greeting/src/"
+            "Aadhar\\Greeting\\": "packages/aadha/laravel_greeting/src/",
+            "Aadhar\\LaravelImagick\\": "packages/aadha/laravel_imagick/src/"
         }
     },
     "autoload-dev": {

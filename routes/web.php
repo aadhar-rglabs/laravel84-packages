@@ -4,6 +4,7 @@ use App\Http\Controllers\CodeController;
 use Illuminate\Support\Facades\Route;
 use Aadhar\Greeting\Greet;
 use Aadhar\Math\Math;
+use Aadha\LaravelImagick\ImagickService;
 
 
 
@@ -53,4 +54,11 @@ Route::get('/math/{num}', function ($num) {
     echo "isPrime: " . $isPrime;
     // echo Greet::sayHello($name = "John");
     exit("done");
+});
+
+
+Route::get('/process-image/{path}', function ($path) {
+    $imagickService = app('imagick');
+    $image = $imagickService->processImage($path);
+    return response()->make($image->getImageBlob(), 200, ['Content-Type' => $image->getImageMimeType()]);
 });
