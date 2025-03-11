@@ -4,7 +4,7 @@ use App\Http\Controllers\CodeController;
 use Illuminate\Support\Facades\Route;
 use Aadhar\Greeting\Greet;
 use Aadhar\Math\Math;
-use Aadha\LaravelImagick\ImagickService;
+
 
 
 

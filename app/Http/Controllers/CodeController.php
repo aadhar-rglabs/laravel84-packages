@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use Auth;
-use Mail;
-use File;
-use JWTAuth;
-use DateTime;
-use Carbon\Carbon;
-use App\Http\Requests;
-use App\Helpers\Helpers;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Aadhar\LaravelImagick\ImagickService;
 
 
 class CodeController extends Controller
 {
     
+    protected $imagickService;
+
+    public function __construct(ImagickService $imagickService)
+    {
+        $this->imagickService = $imagickService;
+    }
+
+
+    public function processImage($path)
+    {
+        $image = $this->imagickService->processImage($path);
+        return response()->make($image->getImageBlob(), 200, ['Content-Type' => $image->getImageMimeType()]);
+    }
+
+
     // use AuthTrait, FilterTrait;
 
     /**
